@@ -121,7 +121,7 @@ table tr td {
 
 .loader h1 {
     position: relative;
-    font-size: 14vw;
+    font-size: 10vw;
     color: #252839;
     -webkit-text-stroke: 0.3vw #383d52;
 }
@@ -135,8 +135,10 @@ table tr td {
     height: 100%;
     color: #01fe87;
     -webkit-text-stroke: 0vw #383d52;
-    border-right: 2px solid #01fe87;
+    /* border-right: 2px solid #01fe87; */
     overflow: hidden;
+    transform: rotate(360deg);
+    transition: 1s;
     animation: animated 5s linear infinite;
 }
 

@@ -1,15 +1,15 @@
 const createList = document.querySelector("#create_list");
 const heroWrapper = document.querySelector(".hero_wrapper");
-const loader = document.getElementById("loader");
+const loader = document.querySelector(".loader");
 const modalWrapper = document.querySelector(".modal_wrapper");
 
 const API = "https://restcountries.com/v3.1/all";
 let listCards = [];
 const getData = async () => {
+  loading(true);
   const data = await fetch(API);
-  // loading(true);
   const res = await data.json();
-  // loading(false);
+  loading(false);
   return res;
 };
 
@@ -32,12 +32,21 @@ getData()
                   <button class="btnDelete"  >Delete</button>
                 </td>
             </tr>
+            
         `;
     });
   })
   .catch((err) => {
     console.log(err);
   });
+
+function loading(state) {
+  if (state) {
+    loader.classList.remove("hidden");
+  } else {
+    loader.classList.add("hidden");
+  }
+}
 
 document.addEventListener("click", (e) => {
   if (e.target.classList == "btnDelete") {
