@@ -45,12 +45,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// document.addEventListener("click", (e) => {
-//   if (e.target.classList == "btnUpdate") {
-//     e.target.parentElement.parentElement.remove();
-//   }
-// });
-
 function Update(id) {
   const country = listCards[id];
   console.log(country);
